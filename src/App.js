@@ -1,18 +1,16 @@
 import React from 'react';
+import propTypes from 'prop-types'
 
-function Food({ fav }) {
-  return <h3>I love { fav }</h3>
+function Food({ favourite }) {
+  return <h3>I love { favourite }</h3>
 }
 
+const foodILike = []
 
 function App() {
   return (
     <div className="App">
       <h1>Hello!</h1>
-      <Food fav="kimchi" />
-      <Food fav="ramen" />
-      <Food fav="samgiopsal" />
-      <Food fav="chukumi" />
     </div>
   );
 }
