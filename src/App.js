@@ -1,17 +1,19 @@
-import React from 'react';
-import propTypes from 'prop-types'
-
-function Food({ favourite }) {
-  return <h3>I love { favourite }</h3>
-}
-
-const foodILike = []
+import React from "react";
+import { HashRouter, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Detail from "./routes/Detail";
+import Navigation from "./components/Navigation";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello!</h1>
-    </div>
+    <HashRouter>
+      <Navigation />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/movie/:id" component={Detail} />
+    </HashRouter>
   );
 }
 
